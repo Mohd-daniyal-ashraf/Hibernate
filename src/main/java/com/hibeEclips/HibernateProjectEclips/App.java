@@ -31,7 +31,7 @@ public class App
 		tx.commit();
 
 		se.close();
-
+		System.out.println("Done ...");
     }
 }
 
