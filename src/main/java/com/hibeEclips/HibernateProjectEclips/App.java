@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
 public class App 
 {
     public static void main( String[] args )
@@ -17,9 +16,9 @@ public class App
 		System.out.println(factory.isClosed());
 
 		Student student = new Student();
-		student.setId(3);
-		student.setName("sk1");
-		student.setCity("lucknow");
+		student.setId(4);
+		student.setName("abdul");
+		student.setCity("mumbai");
 		System.out.println(student);
 
 		// for saving the student object into DB

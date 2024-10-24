@@ -1,16 +1,22 @@
 package com.hibeEclips.HibernateProjectEclips;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 
 @Entity
 public class Student {
 	@Id
 	private int id;
 	private String name;
-	@Transient
 	private String city;
+	private Certificate certificate;
+
+	public Certificate getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(Certificate certificate) {
+		this.certificate = certificate;
+	}
 
 	public Student(int id, String name, String city) {
 		super();
@@ -49,7 +55,6 @@ public class Student {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return this.id + " : " + this.name + " : " + this.city;
 	}
 
