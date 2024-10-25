@@ -1,11 +1,26 @@
 package com.hibeEclips.HibernateProjectEclips;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Embeddable
 public class Certificate {
 	private String cource_name;
-	private String duration;
+	@Column(name = "Data")
+	@Temporal(TemporalType.TIME)
+	private Date issue_date;
+
+	public Date getIssue_date() {
+		return issue_date;
+	}
+
+	public void setIssue_date(Date issue_date) {
+		this.issue_date = issue_date;
+	}
 
 	public String getCource_name() {
 		return cource_name;
@@ -15,22 +30,15 @@ public class Certificate {
 		this.cource_name = cource_name;
 	}
 
-	public String getDuration() {
-		return duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
 
 	public Certificate() {
 		super();
 	}
 
-	public Certificate(String cource_name, String duration) {
+	public Certificate(String cource_name, Date issue_date) {
 		super();
 		this.cource_name = cource_name;
-		this.duration = duration;
+		this.issue_date = issue_date;
 	}
 
 }
